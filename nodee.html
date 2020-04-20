@@ -8,17 +8,16 @@ and open the template in the editor.
     <head>
         <title>Repsol Simulator</title>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-          <style>
+            <style>
               body {
                   background: #292B32;
                   color: white;
-                  font-family: 'Roboto', sans-serif;
-
+                    text-align: center;
+font-family: 'Roboto', sans-serif;
               }
         /* The Modal (background) */
 .modal {
@@ -36,7 +35,7 @@ and open the template in the editor.
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #292B32;
+  background-color: black;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -61,17 +60,17 @@ and open the template in the editor.
 
 
 .choices{
-     border-radius: 4px;
+     border-radius: 12px;
   background: transparent;
   padding: 5px; 
-border: grey;
+border: white;
 border-style: solid;
   color: white;
   margin-top: 11px;
  font-size: 17pt;
  width: 70%;
    display:block;
-border-width: thin;
+
    margin-left: auto;
                 margin-right:auto;
                 display: block;
@@ -87,233 +86,42 @@ border-width: thin;
        margin-left: auto;
                 margin-right:auto;
                 display: block;
-                border-radius: 12px;
+    
+}
+.descText{
+    width: 60%;
+        text-align: center;
+      margin-left: auto;
+                margin-right:auto;
+                display: block;
+    
+}
+
+.startbtn{
+         border-radius: 12px;
 
       background-color: #65bf92; /* Green */
   border: none;
   color: white;
-  padding: 15px 20px;
-    font-size: 20px;
-
-    
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
 }
-        
     </style>
+        
     </head>
-    
-  
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
     <body>
-            <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
-
-<h1 id="title1" class="texty"></h1>
-        <hr style="width:50%">
-<h2 id="title2" class="texty"></h2>
-<button class="choices" onclick="nextOpt1()" id="op1"></button>
-<button class="choices" onclick="nextOpt2()" id="op2"></button>
-<button class="choices" onclick="nextOpt3()" id="op3"></button>
-<button class="choices" onclick="nextOpt4()" id="op4"></button>
-
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-          <h1 class="texty" id="mTitle"> </h1>
-
-    <p class="texty" id="hhh">
-        
-    </p>
-    <button id="GoToNext" class="nextBtn">next</button>
-
-  </div>
-
-</div>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAcgPHhIufxEcsfPGrbgkiN6DfFEsUsh64",
-    authDomain: "badmintl.firebaseapp.com",
-    databaseURL: "https://badmintl.firebaseio.com",
-    projectId: "badmintl",
-    storageBucket: "badmintl.appspot.com",
-    messagingSenderId: "541338516307",
-    appId: "1:541338516307:web:0c16a1adb98ac0a1febfa6"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-                // Initialize Firebase
-                var pIDfrL = ""
-                var pCATfrL = ""
-                var topicName = "";
-                var articles = [];
-                var nextt = ""
-
-
-                var opt1Desc = ""
-                var opt2Desc = ""
-                var opt3Desc = ""
-                var opt4Desc = ""
-
-                  var opt1Title = ""
-                var opt2Title = ""
-                var opt3Title = ""
-                var opt4Title = ""
-
-                var optionResult = ""
-                var branch = "a0"
- if (location.search.match(/pvi=([^&]*)/i))
-        {
-
-            branch = location.search.match(/pvi=([^&]*)/i)[1];
-        }
-  var dbRef = firebase.database().ref().child(branch);
-
-              //dbRef.on('value', snap =>   bigy.innerText = snap.val());
-           //   dbRef.on('value', snap =>   alert(snap.val().strPicSource));
-dbRef.once('value').then(function(snapshot) {
- // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-        /* var rd1 = document.getElementById('rd1');
-                var rd2 = document.getElementById('rd2');
-                var rd3 = document.getElementById('rd3');
-   var tN2 = document.getElementById('tN');
-     var himgg = document.getElementById('hImg');
-
-                    himgg.src = snapshot.val().strPicURL;
-  
-            tN2.innerText = snapshot.val().topicName;
-
-              topicName = snapshot.val().topicName;
-                rd1.innerText = "‣" + snapshot.val().strRundownPoint1;
-                */
-               
-               
-                                nextt = snapshot.val().next;
-
-               
-               
-               
-                 articles = snapshot.val().options;
+    <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+        <h1>Simulation </h1>
+        <h3> David Alston</h3>
+        <p class="descText">In this simulation, you are a member of the advisory board for a Spanish company named Repsol.</p>
+        <button onclick="window.location.href='node.html?pvi=a0'" class="startbtn">Begin</button>
 
         
 
 
 
-  var desc = document.getElementById("title1");
-    desc.innerText =  snapshot.val().title;
-    
-      var desc = document.getElementById("title2");
-    desc.innerText =  snapshot.val().desc;
-
-
-   opt1Desc = snapshot.val().options.o1.result
-                 opt2Desc = snapshot.val().options.o2.result
-                 opt3Desc = snapshot.val().options.o3.result
-                 opt4Desc = snapshot.val().options.o4.result
-                 
-                   opt1Title = snapshot.val().options.o1.title
-                 opt2Title = snapshot.val().options.o2.title
-                 opt3Title = snapshot.val().options.o3.title
-                 opt4Title = snapshot.val().options.o4.title
-
-    document.getElementById("op1").innerText =  snapshot.val().options.o1.title;
-    document.getElementById("op2").innerText =  snapshot.val().options.o2.title;
-    document.getElementById("op3").innerText =  snapshot.val().options.o3.title;
-    document.getElementById("op4").innerText =  snapshot.val().options.o4.title;
-
-                              // alert(snapshot.val().options.o1.result);
-
-            
-               
-               
-                });
-                
-                     
-                   function nextPage(){
-                  //  var uri = 'index.html?pvi='+childKey;
-
-                                           window.location = nextt
-                   }
-                
-                   // var uri = 'index.html?pvi='+childKey+'&ct='+topicCategory;
-                   
-                   function runn(){
-                  //  var uri = 'index.html?pvi='+childKey;
-                    var uri = 'node.html?pvi='+"childKey";
-
-                                           window.location = uri
-                   }
-                   
-                   
-                    function nextOpt1(){
-                  //  var uri = 'index.html?pvi='+childKey;
-  var desc = document.getElementById("hhh");
-    desc.innerText = opt1Desc;
-      var tity = document.getElementById("mTitle");
-    tity.innerText = opt1Title;
-  modal.style.display = "block";
-                     }
-                    function nextOpt2(){
-                  //  var uri = 'index.html?pvi='+childKey;
-                          
-                            var desc = document.getElementById("hhh");
-    desc.innerText = opt2Desc;
-      var tity = document.getElementById("mTitle");
-    tity.innerText = opt2Title;
-    
-  modal.style.display = "block";
-
-                   }
-                    function nextOpt3(){
-                  //  var uri = 'index.html?pvi='+childKey;
-
-  var desc = document.getElementById("hhh");
-    desc.innerText = opt3Desc;
-      var tity = document.getElementById("mTitle");
-    tity.innerText = opt3Title;
-    
-  modal.style.display = "block";
-                   }
-                    function nextOpt4(){
-                  //  var uri = 'index.html?pvi='+childKey;
-
-  var desc = document.getElementById("hhh");
-    desc.innerText = opt4Desc;
-      var tity = document.getElementById("mTitle");
-    tity.innerText = opt4Title;
-  modal.style.display = "block";
-  
-                   }
-                   
-                   var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-
-var btnNext = document.getElementById("GoToNext");
-// When the user clicks on the button, open the modal
-btnNext.onclick = function() {
-   
-     window.location = nextt
-
-  modal.style.display = "none";
-}
-
-
-
-            </script>
-        
     </body>
 </html>
